@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>640</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>640</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Register</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(54, 54, 90, 255), stop:1 rgba(0, 0, 255, 255));</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>641</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 0);
+color: rgb(206, 206, 255);
+font: 81 24pt &quot;JetBrains Mono NL ExtraBold&quot;;</string>
+    </property>
+    <property name="text">
+     <string>WELCOME!</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget_3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>0</y>
+      <width>311</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(26, 26, 177, 255), stop:1 rgba(0, 0, 0, 0));</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>270</y>
+      <width>311</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 0), stop:1 rgba(0, 0, 255, 170));
+color: white;
+font: 8pt &quot;JetBrains Mono&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Already have an account? Log in here</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>0</y>
+      <width>311</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>400</width>
+      <height>1000</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../Images/terminal.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="registerButton">
+    <property name="geometry">
+     <rect>
+      <x>109</x>
+      <y>300</y>
+      <width>111</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="whatsThis">
+     <string/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	font: 63 13pt &quot;JetBrains Mono SemiBold&quot;;
+	color: white;
+	background-color: rgb(85, 85, 255);
+	border-radius: 8px;
+	border: 2px solid rgb(165, 165, 255);
+}
+QPushButton:hover
+{
+	background-color: rgb(165, 165, 255);
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(85, 85, 255);
+}</string>
+    </property>
+    <property name="text">
+     <string>Register</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="usernameEdit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>291</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>JetBrains Mono</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid white;
+border-radius: 8px;
+background-color: rgb(74, 74, 92);
+color: white;
+selection-background-color: rgb(119, 119, 148);
+font: 12pt &quot;JetBrains Mono&quot;;</string>
+    </property>
+    <property name="placeholderText">
+     <string>Enter username</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="passwordEdit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>291</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>JetBrains Mono</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid white;
+border-radius: 8px;
+background-color: rgb(74, 74, 92);
+color: white;
+selection-background-color: rgb(119, 119, 148);
+font: 12pt &quot;JetBrains Mono&quot;;</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Enter password</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>80</y>
+      <width>281</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 81 20pt &quot;JetBrains Mono ExtraBold&quot;;
+background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string>Username</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>150</y>
+      <width>281</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 81 20pt &quot;JetBrains Mono ExtraBold&quot;;
+background-color: rgba(0, 0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Password</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="confirmPassEdit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>250</y>
+      <width>291</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid white;
+border-radius: 8px;
+background-color: rgb(74, 74, 92);
+color: white;
+selection-background-color: rgb(119, 119, 148);
+font: 12pt &quot;JetBrains Mono&quot;;</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Re-enter password</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>220</y>
+      <width>281</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 81 20pt &quot;JetBrains Mono ExtraBold&quot;;
+background-color: rgba(0, 0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Confirm password</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="toLoginButton">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>300</y>
+      <width>111</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="whatsThis">
+     <string/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	font: 63 13pt &quot;JetBrains Mono SemiBold&quot;;
+	color: white;
+	background-color: rgb(85, 85, 255);
+	border-radius: 8px;
+	border: 2px solid rgb(165, 165, 255);
+}
+QPushButton:hover
+{
+	background-color: rgb(165, 165, 255);
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(85, 85, 255);
+}</string>
+    </property>
+    <property name="text">
+     <string>Log in</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="errorMessage">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>350</y>
+      <width>301</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 0);
+color: red;
+font: 81 11pt &quot;JetBrains Mono ExtraBold&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label_5</zorder>
+   <zorder>widget_3</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_3</zorder>
+   <zorder>registerButton</zorder>
+   <zorder>usernameEdit</zorder>
+   <zorder>passwordEdit</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>confirmPassEdit</zorder>
+   <zorder>label_4</zorder>
+   <zorder>toLoginButton</zorder>
+   <zorder>errorMessage</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
