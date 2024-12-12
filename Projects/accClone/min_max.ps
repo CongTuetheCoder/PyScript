@@ -1,0 +1,26 @@
+declare numbers: array[integer]
+
+print("Enter the amount of items:")
+declare num_items: integer = to_integer(read())
+
+print("Enter ", num_items, " integers:")
+declare value: integer
+for i = 1 -> num_items {
+	value = to_integer(read())
+	numbers += [value]
+}
+
+declare max_number: integer = -9999999
+declare min_number: integer = 9999999
+
+for i = 0 -> length(numbers) - 1 {
+	if numbers[i] > max_number {
+		max_number = numbers[i]
+	}
+	if numbers[i] < min_number {
+		min_number = numbers[i]
+	}
+}
+print("Array: ", numbers)
+print("Maximum number: ", max_number)
+print("Minimum number: ", min_number)

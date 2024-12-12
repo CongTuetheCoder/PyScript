@@ -1,0 +1,38 @@
+declare die1: integer
+declare die2: integer
+declare score1: integer = 0
+declare score2: integer = 0
+declare score: integer = 0
+declare is_p1: boolean = true
+
+while score1 < 100 and score2 < 100 {
+	die1 = randint(1, 6)
+	die2 = randint(1, 6)
+	score = die1 + die2
+
+	print(is_p1 ? "P1 rolled: " : "P2 rolled: ", die1, ", ", die2)
+
+	if is_p1 {
+		score1 += score
+	}
+	else {
+		score2 += score
+	}
+
+	if die1 * die2 == 36 {
+		if is_p1 {
+			score1 = 0
+		}
+		else {
+			score2 = 0
+		}
+	}
+	if (die1 == 6 or die2 == 6) {
+		is_p1 = not is_p1
+	}
+	print("P1: ", score1)
+	print("P2: ", score2)
+	read()
+}
+
+print(score1 >= 100 ? "P1" : "P2", " won!")

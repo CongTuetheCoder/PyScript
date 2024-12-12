@@ -1,0 +1,22 @@
+print("Enter the first number:")
+declare first_number: real = to_real(read())
+
+print("SELECT\n + for Addition\n - for Subtraction\n * for Multiplication\n / for Division\n % for Modulo\n ^ for Power")
+declare operation: string = read()
+
+print("Enter the second number:")
+declare second_number: real = to_real(read())
+
+declare result: real
+
+switch operation {
+	case "+" { result = first_number + second_number }
+	case "-" { result = first_number - second_number }
+	case "*" { result = first_number * second_number }
+	case "/" { result = first_number / second_number }
+	case "%" { result = first_number % second_number }
+	case "^" { result = first_number ^ second_number }
+	otherwise { error(format("Illegal operation: '{}'", operation)) }
+}
+
+print(format("{} {} {} = {}", first_number, operation, second_number, result))

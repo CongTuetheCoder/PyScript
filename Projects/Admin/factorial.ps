@@ -1,0 +1,17 @@
+function fact(n: integer) {
+	if n < 0 {
+		error("Cannot take the factorial of a negative integer.")
+	}
+	if n == 0 {
+		return 1;
+	}
+	declare result: integer = 1
+	for i = 1 -> n {
+		result *= i
+	}
+	return result
+}
+
+print("Enter an integer:")
+declare num: integer = to_integer(read())
+print(num, "! = ", fact(num))

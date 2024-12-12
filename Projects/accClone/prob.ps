@@ -1,0 +1,20 @@
+declare die1: integer
+declare die2: integer
+declare trials: integer = 10000
+declare one_6: integer = 0
+declare two_6: integer = 0
+
+for i = 1 -> trials {
+	die1 = randint(1, 6)
+	die2 = randint(1, 6)
+	if die1 == 6 or die2 == 6 {
+		if die1 * die2 == 36 {
+			two_6 += 1
+		} else {
+			one_6 += 1
+		}
+	}
+}
+
+print(one_6 / to_real(trials))
+print(two_6 / to_real(trials))

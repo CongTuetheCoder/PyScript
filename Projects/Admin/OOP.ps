@@ -1,0 +1,25 @@
+object complex {
+	foo: integer <- 5
+	bar: integer <- 3
+}
+
+object Test {
+	x: integer <- 7
+	y: integer <- 10
+	complex: object <- complex
+	method get_sum() {
+		return Test.x + Test.y
+	}
+	method print_attr() {
+		print("x: ", Test.x)
+		print("y: ", Test.y)
+		print("complex: ", Test.complex)
+	}
+}
+
+declare test_obj: object = Test
+print(test_obj.x)
+print(test_obj.get_sum())
+print(test_obj.complex.foo)
+print()
+test_obj.print_attr()

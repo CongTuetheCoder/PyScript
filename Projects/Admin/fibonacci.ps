@@ -1,0 +1,24 @@
+function fib(n: integer) {
+	if n < 0 {
+		error("Term cannot be negative.")
+	}
+	if n == 0 {
+		return n
+	}
+
+	declare current: integer = 0
+	declare prev1: integer = 1
+	declare prev2: integer = 0
+
+	for i = 2 -> n {
+		current = prev1 + prev2
+		prev2 = prev1
+		prev1 = current
+	}
+
+	return current
+}
+
+print("Enter the nth term:")
+declare term: integer = to_integer(read())
+print(fib(term))
