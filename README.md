@@ -14,6 +14,7 @@ A custom programming language made using Python.
 	type <nativefunction>: print
 	type <method>: obj_name.method
 	type <typing>: type(1)
+ 	type <null>: print() // Calls print
 
 ### VARIABLE DECLARATION
 	declare var_name: data_type = value
@@ -144,6 +145,12 @@ A custom programming language made using Python.
 	to_boolean(value) // Converts a value to a boolean.
 	to_char(value) // Converts a value to a character.
 
+ 	is_string(value) // Checks if a value is a string.
+	is_integer(value) // Checks if a value is an integer.
+	is_real(value) // Checks if a value to a real.
+	is_boolean(value) // Checks if a value is a boolean.
+	is_char(value) // Checks if a value is a character.
+
 	open_file(fn: type <string>, mode: type <char>) // Opens a file in either read, write or append mode.
 	close_file(file: type <file>) // Closes a file.
 	read_file(file: type <file>) // Reads the next line of a file.
@@ -152,10 +159,11 @@ A custom programming language made using Python.
 
 	format(string_to_format: type <string>, *args) // Formats a string.
 	pow(a: type <integer/real>, b: type <integer/real>, c: type <integer>) // Returns (a^b) % c or a^b if c is not given.
-	type(value) // Returns the type of a value as a typing object.
+	type(value) // Returns the value type as a typing object.
 	length(value: type <string/array>) // Returns the length of a string or array.
 	max(x, y) // Returns the greater value between x and y.
 	min(x, y) // Returns the lesser value between x and y.
+ 	sum(arr: type<array>) // Returns the sum of an array's elements.
 	reverse(value: type <string/array>) // Reveses the string/array.
 	sorted(arr: type<array>) // Returns a sorted array.
 
@@ -164,3 +172,4 @@ A custom programming language made using Python.
 
 ## CHANGE LOG
 1.0: Not much
+1.1: Added the `sum()`, `is_string()`, `is_integer()`, `is_real()`, `is_boolean()`, and `is_char()` built-in functions.
