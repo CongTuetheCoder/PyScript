@@ -2,7 +2,7 @@
 A custom programming language made using Python.
 
 ## SYNTAX
-### DATA TYPES - CAN BE ACCESSED BY 'type()' BUILT-IN FUNCTION
+### DATA TYPES - CAN BE ACCESSED BY BUILT-IN FUNCTION `type()`
 	type <integer>: 4, 31, -34
 	type <real>: 0.4, -15.4
 	type <string>: "Hello!"
