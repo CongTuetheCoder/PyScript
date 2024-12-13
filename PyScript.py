@@ -392,7 +392,7 @@ class ForExpression(Expression):
 		self.startValue = startValue
 		self.endValue = endValue
 		self.stepValue = stepValue
-	
+
 class WhileExpression(Expression):
 	def __init__(self, condition: Expression, body: list[Expression]):
 		self.condition = condition
@@ -420,7 +420,7 @@ class FunctionDeclaration(Expression):
 		for line in self.body:
 			result += f"\t\t{line}\n"
 		return result + "\t}"
-	
+
 class MethodDeclaration(Expression):
 	def __init__(self, methodName: str, args: list[tuple[str, str]], body: list[Expression], obj: ObjectLiteral):
 		self.methodName = methodName
@@ -482,7 +482,7 @@ class ReturnNode(Expression):
 class ContinueNode(Expression):
 	def __repr__(self):
 		return f"continue"
-	
+
 class BreakNode(Expression):
 	def __repr__(self):
 		return f"break"
@@ -1971,6 +1971,36 @@ class NativeFunction(Function):
 			return res.success(Char(value.value))
 		return res.fail(RTError(f"Unable to convert '{value}' to a character."))
 
+	def callIsString(self, output):
+		res = RTResult()
+		value = res.register(self.scope.get("value"))
+		if res.error: return res
+		return res.success(Boolean(isinstance(value, String)))
+	
+	def callIsInteger(self, output):
+		res = RTResult()
+		value = res.register(self.scope.get("value"))
+		if res.error: return res
+		return res.success(Boolean(isinstance(value, Integer)))
+	
+	def callIsReal(self, output):
+		res = RTResult()
+		value = res.register(self.scope.get("value"))
+		if res.error: return res
+		return res.success(Boolean(isinstance(value, Real)))
+	
+	def callIsBoolean(self, output):
+		res = RTResult()
+		value = res.register(self.scope.get("value"))
+		if res.error: return res
+		return res.success(Boolean(isinstance(value, Boolean)))
+	
+	def callIsChar(self, output):
+		res = RTResult()
+		value = res.register(self.scope.get("value"))
+		if res.error: return res
+		return res.success(Boolean(isinstance(value, Char)))
+
 	def callFormat(self, output):
 		res = RTResult()
 		values: list[RTValue] = []
@@ -2908,6 +2938,13 @@ def resetSymbols():
 	table.declare("to_boolean", True, NativeFunction("ToBoolean", [("value", "null")], table, 1))
 	table.declare("to_char", True, NativeFunction("ToChar", [("value", "null")], table, 1))
 
+		# Type-checking functions
+	table.declare("is_string", True, NativeFunction("IsString", [("value", "null")], table, 1))
+	table.declare("is_integer", True, NativeFunction("IsInteger", [("value", "null")], table, 1))
+	table.declare("is_real", True, NativeFunction("IsReal", [("value", "null")], table, 1))
+	table.declare("is_boolean", True, NativeFunction("IsBoolean", [("value", "null")], table, 1))
+	table.declare("is_char", True, NativeFunction("IsChar", [("value", "null")], table, 1))
+
 		# File handling functions
 	table.declare("open_file", True, NativeFunction("Openfile", [("fn", "string"), ("mode", "char")], table, 2))
 	table.declare("close_file", True, NativeFunction("Closefile", [("file", "file")], table, 1))
@@ -2980,7 +3017,7 @@ class Highlighter(QSyntaxHighlighter):
 ## QMAINWINDOWS
 user: str = ""
 projectName: str = ""
-version: str = "1.0"
+version: str = "1.1"
 
 class Login(QMainWindow):
 	def __init__(self):
@@ -3443,6 +3480,7 @@ class Project(QMainWindow):
 			elif event.key() == Qt.Key.Key_Backspace:
 				if terminal_cursor.position() <= input_pos:
 					return True
+				else: return super().eventFilter(source, event)
 			else: return super().eventFilter(source, event)
 		elif source == self.codeEdit and event.type() == QEvent.Type.KeyPress:
 			if event.modifiers() == Qt.KeyboardModifier.ControlModifier and event.key() == Qt.Key.Key_Slash:
