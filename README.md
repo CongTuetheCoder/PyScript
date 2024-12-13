@@ -171,5 +171,7 @@ A custom programming language made using Python.
 	randint(start_val: type <integer>, end_val: type <integer>) // Returns a random integer x, start_val <= x <= end_val
 
 ## CHANGE LOG
-1.0: Not much \n
-1.1: Added the `sum()`, `is_string()`, `is_integer()`, `is_real()`, `is_boolean()`, and `is_char()` built-in functions.
+```
+1.0: Not much
+1.1: Added the sum(), is_string(), is_integer(), is_real(), is_boolean(), and is_char() built-in functions.
+```
