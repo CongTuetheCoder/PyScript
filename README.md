@@ -1,4 +1,4 @@
-# PyScript 1.0
+# PyScript 1.1
 A custom programming language made using Python.
 
 ## SYNTAX
